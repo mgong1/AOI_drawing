@@ -24,7 +24,7 @@ cv2.createTrackbar('V min', 'frame', 0, 255, get_hsv_values)
 cv2.createTrackbar('V max', 'frame', 255, 255, get_hsv_values)
 
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture("test.mp4")
 
 while True:
     ret, frame = cap.read()
