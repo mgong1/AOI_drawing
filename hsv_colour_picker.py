@@ -24,7 +24,8 @@ cv2.createTrackbar('V min', 'frame', 0, 255, get_hsv_values)
 cv2.createTrackbar('V max', 'frame', 255, 255, get_hsv_values)
 
 
-cap = cv2.VideoCapture("test.mp4")
+cap = cv2.VideoCapture("Participant12_full.mp4")
+cv2.namedWindow('result', cv2.WINDOW_NORMAL)
 
 while True:
     ret, frame = cap.read()
@@ -51,9 +52,10 @@ while True:
     result = cv2.bitwise_and(frame, frame, mask=mask)
 
     # Show the frame, the mask, and the result
-    cv2.imshow("orginal", frame)
-    cv2.imshow("mask", mask)
+    # cv2.imshow("orginal", frame)
+    # cv2.imshow("mask", mask)
     cv2.imshow('result', result)
+    cv2.resizeWindow('result', 720, 480)
 
     # Exit if 'q' is pressed
     if cv2.waitKey(1) & 0xFF == ord('q'):
